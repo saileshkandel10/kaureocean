@@ -1,0 +1,71 @@
+/* Kaure Ocean – Redesign Theme (loaded after kaure-design-system.css) */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+Devanagari:wght@500;700&family=Shippori+Mincho:wght@500;700;800&display=swap');
+
+:root{
+  --ink:#102b66;--ink2:#1e5aa8;--paper:#faf8f4;--card:#fff;--text:#1d2a3d;--mute:#5f6b7d;--line:#e6e1d8;--red:#d8232a;--gold:#5db7ee;--shadow:0 10px 30px rgba(11,31,58,.08);
+  /* remap legacy tokens so inline var() usages adopt the new palette */
+  --kaure-navy:#102b66;--kaure-dark-navy:#0b1d44;--kaure-orange:#d8232a;--kaure-cream:#faf8f4;--kaure-white:#ffffff;--kaure-text:#1d2a3d;--kaure-gray-light:#f5f2ec;--kaure-gray-border:#e6e1d8;
+  --font-poppins:'Noto Sans JP',system-ui,sans-serif;--font-jp:'Noto Sans JP',sans-serif;
+}
+/* Inner pages are always light for reliable contrast (homepage handles its own dark mode inline) */
+:root{color-scheme:light}
+
+body{font-family:'Noto Sans JP',system-ui,sans-serif;background:var(--paper);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Shippori Mincho','Noto Sans JP',serif;letter-spacing:-.01em;line-height:1.2}
+h1,h2,h3{color:var(--ink)}
+a{color:inherit}
+
+/* Buttons */
+.btn-kaure-primary,.btn-kaure-secondary{background:var(--red);color:#fff;border:none;border-radius:999px;font-weight:700;padding:.8rem 1.9rem;transition:.2s;text-decoration:none;display:inline-block}
+.btn-kaure-primary:hover,.btn-kaure-secondary:hover{background:#c01f26;color:#fff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(216,35,42,.35)}
+.btn-outline-primary{border-color:var(--red);color:var(--red);border-radius:999px;font-weight:600}
+.btn-outline-primary:hover{background:var(--red);color:#fff}
+.btn-outline-light{border-radius:999px;font-weight:600}
+
+/* Top bar */
+.kaure-topbar{background:var(--ink);color:#cbd5e6;font-size:.8rem;padding:.5rem 0}
+.kaure-topbar a{color:#cbd5e6}.kaure-topbar a:hover{color:var(--gold)}
+.kaure-topbar .badge{background:var(--gold)!important;color:#06244a!important}
+
+/* Header / nav */
+.kaure-header{background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);box-shadow:none;position:sticky;top:0;z-index:1030}
+.kaure-navbar .nav-link{color:var(--mute);font-weight:500;transition:color .2s}
+.kaure-navbar .nav-link:hover,.kaure-navbar .nav-link.active{color:var(--red)}
+.kaure-navbar .dropdown-menu{border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.kaure-navbar .dropdown-item{border-radius:8px;color:var(--text)}
+.kaure-navbar .dropdown-item:hover{background:var(--paper);color:var(--red)}
+.navbar-brand span{line-height:1.1}
+
+/* Hero / page banner */
+.kaure-hero{background:linear-gradient(135deg,var(--ink),var(--ink2));color:#fff;position:relative;overflow:hidden;padding:5rem 0}
+.kaure-hero h1,.kaure-hero h2{color:#fff}
+.kaure-hero .badge{background:var(--gold)!important;color:#06244a!important}
+.kaure-hero .lead{color:#cbd5e6}
+
+/* Cards */
+.kaure-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:2rem;box-shadow:var(--shadow);height:100%;transition:transform .25s,box-shadow .25s}
+.kaure-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,31,58,.14)}
+.kaure-card-cream{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:2rem}
+
+/* Section heading accent bar */
+.head-accent{background:var(--red)!important}
+
+/* Footer */
+.kaure-footer{background:var(--ink);color:#a9b6cb;padding:64px 0 24px}
+.kaure-footer h5{color:#fff;border-bottom:none;display:inline-block;padding-bottom:0;font-family:'Shippori Mincho',serif}
+.kaure-footer a{color:#a9b6cb}.kaure-footer a:hover{color:var(--gold)}
+
+/* Forms */
+.form-control,.form-select{border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--text);padding:.7rem .9rem}
+.form-control:focus,.form-select:focus{border-color:var(--red);box-shadow:0 0 0 2px rgba(216,35,42,.25);background:var(--card)}
+
+/* Breadcrumbs */
+.breadcrumb{background:transparent}
+
+/* WhatsApp float */
+.whatsapp-float{background:#25d366;color:#fff;border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.whatsapp-float:hover{color:#fff;transform:translateY(-3px)}
+
+/* Reveal animation helper */
+.reveal{opacity:0;transform:translateY(24px);transition:.7s}.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}html{scroll-behavior:auto}}
